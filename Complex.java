@@ -17,9 +17,9 @@ class Complex
 	static void display(Complex num)
 	{
 		if(num.img >= 0.0)
-			System.out.printf("Value = (%.2f + %.2fj)",num.real,num.img);
+			System.out.printf("Value = (%.2f + %.2fi)",num.real,num.img);
 		else
-			System.out.printf("Value = (%.2f - %.2fj)",num.real,Math.abs(num.img));
+			System.out.printf("Value = (%.2f - %.2fi)",num.real,Math.abs(num.img));
 		System.out.println();
 	}
 
@@ -88,16 +88,17 @@ class Complex
 
 /*
 Number1:
-Value = (2.00 + 3.00j)
+Value = (2.00 + 3.00i)
 Number2:
-Value = (3.00 - 1.00j)
+Value = (3.00 - 1.00i)
 Addition:
-Value = (5.00 + 2.00j)
+Value = (5.00 + 2.00i)
 Subtraction:
-Value = (-1.00 + 4.00j)
+Value = (-1.00 + 4.00i)
 Multiplication:
-Value = (9.00 + 7.00j)
+Value = (9.00 + 7.00i)
 Modulus of number1: 3.605551275463989
 Complement of number1:
-Value = (2.00 - 3.00j)
+Value = (2.00 - 3.00i)
+
 */
