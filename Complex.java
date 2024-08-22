@@ -8,18 +8,24 @@ class Complex
 		this.img = img;
 	}
 
+	Complex()
+	{
+		this.real = 0.0;
+		this.img = 0.0;
+	}
+
 	static void display(Complex num)
 	{
 		if(num.img >= 0.0)
-			System.out.printf("Value = (%.2f + %.2f)",num.real,num.img);
+			System.out.printf("Value = (%.2f + %.2fj)",num.real,num.img);
 		else
-			System.out.printf("Value = (%.2f - %.2f)",num.real,Math.abs(num.img));
+			System.out.printf("Value = (%.2f - %.2fj)",num.real,Math.abs(num.img));
 		System.out.println();
 	}
 
 	static Complex add(Complex num1, Complex num2)
 	{
-		Complex res = new Complex(0,0);
+		Complex res = new Complex();
 		res.real = num1.real + num2.real;
 		res.img = num1.img + num2.img;
 		return res;
@@ -27,7 +33,7 @@ class Complex
 
 	static Complex sub(Complex num1, Complex num2)
 	{
-		Complex res = new Complex(0,0);
+		Complex res = new Complex();
 		res.real = num1.real - num2.real;
 		res.img = num1.img - num2.img;
 		return res;
@@ -35,9 +41,9 @@ class Complex
 
 	static Complex mul(Complex num1, Complex num2)
 	{
-		Complex res = new Complex(0,0);
-		res.real = num1.real * num2.real;
-		res.img = num1.img * num2.img;
+		Complex res = new Complex();
+		res.real = num1.real * num2.real - num1.img * num2.img;
+		res.img = num1.real * num2.img + num1.img * num2.real;
 		return res;
 	}
 
@@ -48,7 +54,7 @@ class Complex
 
 	static Complex complement(Complex num)
 	{
-		Complex res = new Complex(0,0);
+		Complex res = new Complex();
 		res.real = num.real;
 		res.img = -1.0*num.img;
 		return res;
@@ -82,16 +88,16 @@ class Complex
 
 /*
 Number1:
-Value = (2.00 + 3.00)
+Value = (2.00 + 3.00j)
 Number2:
-Value = (3.00 - 1.00)
+Value = (3.00 - 1.00j)
 Addition:
-Value = (5.00 + 2.00)
+Value = (5.00 + 2.00j)
 Subtraction:
-Value = (-1.00 + 4.00)
+Value = (-1.00 + 4.00j)
 Multiplication:
-Value = (6.00 - 3.00)
-Modulus of number1 :3.605551275463989
+Value = (9.00 + 7.00j)
+Modulus of number1: 3.605551275463989
 Complement of number1:
-Value = (2.00 - 3.00)
+Value = (2.00 - 3.00j)
 */
